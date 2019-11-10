@@ -128,6 +128,31 @@ def copy(path,toPath):
 		logger('Unknow system :(')
 		return False
 
+def clipCopy(data):
+	try:
+		import pyperclip
+	except:
+		install("pyperclip")
+		import pyperclip
+	try:
+		pyperclip.copy(data)
+		return True
+	except:
+		logger('Clipboard error :(')
+		return False
+
+def clipPaste():
+	try:
+		import pyperclip
+	except:
+		install("pyperclip")
+		import pyperclip
+	try:
+		return pyperclip.paste()
+	except:
+		logger('Clipboard error :(')
+		return None
+
 def install(*modulesNames):
 	import subprocess
 	listM = ''

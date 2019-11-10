@@ -1,7 +1,5 @@
 import random,sys
-import pyperclip
 from llib import *
-
 while True:
 	cClear()
 	alp = "qwertyuiopasdfghjklzxcvbnm"
@@ -18,11 +16,12 @@ while True:
 		else:
 			password+=str(random.randint(0,9))
 
-	choice = input("| Password generated:\n| - "+password+"\n| 1.Copy to clipboard\n| 2.Save to file\n| >>> ")
+	choice = input("| Password generated:\n| - "+password+"\n| 1.Copy to clipboard(termux suck dicks)\n| 2.Save to file\n| >>> ")
 	if choice == "1":
-		pyperclip.copy(password)
+		clipCopy(password)
 	elif choice == "2":
 		saveToFile(password,"passwords.txt","a")
 	else:
 		print("NO WAY")
+
 
